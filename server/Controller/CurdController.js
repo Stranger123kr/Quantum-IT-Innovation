@@ -58,6 +58,7 @@ const Login = async (req, res) => {
       res.cookie("UserToken", token, {
         httpOnly: true,
         secure: false,
+        maxAge: 300000, // 5 minutes
       });
 
       res.status(200).json({ msg: "User Found Successfully", token });
